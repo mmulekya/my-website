@@ -25,6 +25,20 @@
       width: 200px;
       border-radius: 10px;
     }
+.gallery {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 15px;
+margin-top: 20px;
+}
+.gallery img {
+width: 100%;
+border-radius: 10px;
+transition: transform 0.3s ease;
+}
+.gallery img:hover {
+transform: scale(1.05);
+}
   </style>
 </head>
 <body>
@@ -50,7 +64,7 @@
     <img src="183.jpg" alt="Sample Image" />
   <div class="container">
     <h2>My New</h2>
-
+  <div class="gallery">
     <img src="IMG0.jpg" alt="Sample Image" />
     <img src="IMG1.jpg" alt="Sample Image" />
     <img src="IMG2.jpg" alt="Sample Image" />
@@ -79,7 +93,7 @@
     <img src="IMG25.jpg" alt="Sample Image" />
     <img src="IMG26.jpg" alt="Sample Image" />
     <img src="IMG27.jpg" alt="Sample Image" />
- <img src="IMG28.jpg" alt="Sample Image" />
+   <img src="IMG28.jpg" alt="Sample Image" />
     <img src="IMG29.jpg" alt="Sample Image" />
     <img src="IMG30.jpg" alt="Sample Image" />
     <img src="IMG31.jpg" alt="Sample Image" />
@@ -90,6 +104,7 @@
     <img src="IMG36.jpg" alt="Sample Image" />
     <img src="IMG37.jpg" alt="Sample Image" />
     <img src="IMG38.jpg" alt="Sample Image" />
+  </div>
   </div>
   <div class="container">
     <h2>My Family</h2>
