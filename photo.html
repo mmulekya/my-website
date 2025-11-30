@@ -1,143 +1,79 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Image Web Page</title>
-  <style>
-    .gallery img {
-      width: 100%;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: transform 0.2s, opacity 0.2s;
-      opacity: 0.9;
-    }
-    .gallery img:hover {
-      transform: scale(1.03);
-      opacity: 1;
-    }
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      margin: 0;
-      padding: 20px;
-    }
-    h2 {
-      text-align: center;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-      gap: 10px;
-      padding: 10px;
-    }
-    .gallery img {
-      width: 100%;
-      margin-bottom: 15px;
-      border-radius: 12px;
-      break-inside: avoid;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h2>My Old </h2>
-    <img src="166.jpg" alt="Sample Image" />
-    <img src="167.jpg" alt="Sample Image" />
-     <img src="168.jpg" alt="Sample Image" />
-    <img src="169.jpg" alt="Sample Image" />
-    <img src="170.jpg" alt="Sample Image" />
-    <img src="171.jpg" alt="Sample Image" />
-    <img src="172.jpg" alt="Sample Image" />
-    <img src="173.jpg" alt="Sample Image" />
-    <img src="174.jpg" alt="Sample Image" />
-    <img src="175.jpg" alt="Sample Image" />
-    <img src="176.jpg" alt="Sample Image" />
-    <img src="177.jpg" alt="Sample Image" />
-    <img src="178.jpg" alt="Sample Image" />
-    <img src="179.jpg" alt="Sample Image" />
-    <img src="180.jpg" alt="Sample Image" />
-    <img src="181.jpg" alt="Sample Image" />
-    <img src="182.jpg" alt="Sample Image" />
-    <img src="183.jpg" alt="Sample Image" />
-  <div class="container">
-    <h2>My Family</h2>
-
-<img src="IM0.jpg" alt="Sample Image" />
-    <img src="IM1.jpg" alt="Sample Image" />
-    <img src="IM2.jpg" alt="Sample Image" />
-    <img src="IM3.jpg" alt="Sample Image" />
-  </div>
-  </div>
-<!-- Modal -->
-<div id="modal" class="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center;"I>
-  <div>
-<img id="modal-img" src="IMG0.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-  </div>
-  <div>
-<img id="modal-img" src="IMG1.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-  </div>
-  <div>
-<img id="modal-img" src="IMG2.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-  </div>
-  <div>
-<img id="modal-img" src="IMG2.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-  </div>
-<img id="modal-img" src="IMG3.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-<img id="modal-img" src="IMG4.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-<img id="modal-img" src="IMG5.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-<img id="modal-img" src="IMG6.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-<img id="modal-img" src="IMG7.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-<img id="modal-img" src="IMG8.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-<img id="modal-img" src="IMG9.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-<img id="modal-img" src="IMG10.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-<img id="modal-img" src="IMG11.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-<img id="modal-img" src="IMG13.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-<img id="modal-img" src="IMG14.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-<img id="modal-img" src="IMG15.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-<img id="modal-img" src="IMG16.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-<img id="modal-img" src="IMG17.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-<img id="modal-img" src="IMG18.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-<img id="modal-img" src="IMG19.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-<img id="modal-img" src="IMG20.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-<img id="modal-img" src="IMG21.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-<img id="modal-img" src="IMG22.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-<img id="modal-img" src="IMG23.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-<img id="modal-img" src="IMG24.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-<img id="modal-img" src="IMG25.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-<img id="modal-img" src="IMG25.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-<img id="modal-img" src="IMG27.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-<img id="modal-img" src="IMG28.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-<img id="modal-img" src="IMG29.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-<img id="modal-img" src="IMG30.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-<img id="modal-img" src="IMG31.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-<img id="modal-img" src="IMG32.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-<img id="modal-img" src="IMG33.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-<img id="modal-img" src="IMG34.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-<img id="modal-img" src="IMG35.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-<img id="modal-img" src="IMG36.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-<img id="modal-img" src="IMG37.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-<img id="modal-img" src="IMG38.jpg" style="max-width:90%; max-height:90%; border-radius:10px;" />
-</div>
-<script>
-const images = document.querySelectorAll('.gallery img');
-const modal = document.getElementById('modal');
-const modalImg = document.getElementById('modal-img');
 
 
-images.forEach(img => {
-img.addEventListener('click', () => {
-modal.style.display = 'flex';
-modalImg.src = img.src;
-});
-});
 
+<!doctype html>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;background:var(--bg);color:#e6eef8;margin:0;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:28px}
+      const closeBtn = document.getElementById('closeBtn');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
 
-modal.addEventListener('click', () => {
-modal.style.display = 'none';
-});
-</script>
+      let currentIndex = -1;
+
+      function openAt(index){
+        const t = thumbs[index];
+        if(!t) return;
+        const full = t.dataset.full;
+        const title = t.dataset.title || '';
+        modalImg.src = full;
+        modalImg.alt = title;
+        modalTitle.textContent = title;
+        currentIndex = index;
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden','false');
+        // focus for keyboard
+        closeBtn.focus();
+      }
+
+      function closeModal(){
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden','true');
+        modalImg.src = '';
+        currentIndex = -1;
+      }
+
+      function showNext(delta){
+        if(currentIndex === -1) return;
+        let idx = currentIndex + delta;
+        if(idx < 0) idx = thumbs.length - 1;
+        if(idx >= thumbs.length) idx = 0;
+        openAt(idx);
+      }
+
+      // wire events
+      thumbs.forEach((t, i)=>{
+        t.addEventListener('click', ()=> openAt(i));
+        t.addEventListener('keydown', (e)=>{ if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openAt(i); } });
+      });
+
+      closeBtn.addEventListener('click', closeModal);
+      prevBtn.addEventListener('click', ()=> showNext(-1));
+      nextBtn.addEventListener('click', ()=> showNext(1));
+
+      // click outside to close
+      modal.addEventListener('click', (e)=>{ if(e.target === modal) closeModal(); });
+
+      // keyboard navigation
+      document.addEventListener('keydown', (e)=>{
+        if(modal.classList.contains('open')){
+          if(e.key === 'Escape') closeModal();
+          if(e.key === 'ArrowRight') showNext(1);
+          if(e.key === 'ArrowLeft') showNext(-1);
+        }
+      });
+
+      // make thumbnails tabbable
+      thumbs.forEach(t=> t.setAttribute('tabindex','0'));
+
+      // Lazy prefetch: when hovering a thumb, start loading the full image
+      thumbs.forEach((t)=>{
+        t.addEventListener('pointerenter', ()=>{
+          const src = t.dataset.full;
+          if(!src) return;
+          const s = new Image(); s.src = src;
+        });
+      });
+
+    })();
+  </script>
 </body>
-  </html>
+</html>
