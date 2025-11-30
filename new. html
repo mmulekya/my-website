@@ -86,7 +86,7 @@ align-items:start;
       
 
   <div class="container">
-    <h1>My new</h1>
+    <h1>Latest</h1>
 
     <div class="gallery" id="gallery">
       <!-- Thumbnails: replace src values with your images. 10 example images below. -->
