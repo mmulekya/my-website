@@ -65,29 +65,30 @@ gap:var(--gap);
 <!-- We'll add 10 images. Thumbnails are small; clicking opens the larger version. -->
 <!-- Using picsum.photos for sample images; swap the URLs with your own images as needed. -->
 
-
 <a class="item" data-index="0" href="#">
-<img loading="lazy" alt="Photo 1" src="IMO.jpg/id/1011/400/300">
-<div class="caption">Photo 1</div>
+  <img loading="lazy" alt="Photo 1"
+       src="IM0.jpg/id/1011/300/200">
+  <div class="caption">Photo 1</div>
 </a>
-
 
 <a class="item" data-index="1" href="#">
-<img loading="lazy" alt="Photo 2" src="IM1.jpg/id/1012/400/300">
-<div class="caption">Photo 2</div>
+  <img loading="lazy" alt="Photo 2"
+       src="IM1.jpg/id/1012/300/200">
+  <div class="caption">Photo 2</div>
 </a>
-
 
 <a class="item" data-index="2" href="#">
-<img loading="lazy" alt="Photo 3" src="IM2.jpg/id/1013/400/300">
-<div class="caption">Photo 3</div>
+  <img loading="lazy" alt="Photo 3"
+       src="IM2.jpg/id/1013/300/200">
+  <div class="caption">Photo 3</div>
 </a>
-
 
 <a class="item" data-index="3" href="#">
-<img loading="lazy" alt="Photo 4" src="IM3.jpg/id/1014/400/300">
-<div class="caption">Photo 4</div>
+  <img loading="lazy" alt="Photo 4"
+       src="IM3.jpg/id/1014/300/200">
+  <div class="caption">Photo 4</div>
 </a>
+
 
 </div>
 </div>
@@ -112,95 +113,61 @@ gap:var(--gap);
 <script>
 (function(){
 const gallery = document.getElementById('gallery')
-const items = Array.from(gallery.querySelectorAll('.item'))
-const modal = document.getElementById('modal')
-const modalImage = document.getElementById('modalImage')
-const modalCaption = document.getElementById('modalCaption')
-const closeBtn = document.getElementById('closeBtn')
-const prevBtn = document.getElementById('prevBtn')
-const nextBtn = document.getElementById('nextBtn')
-const downloadBtn = document.getElementById('downloadBtn')
+const items = Array.from(document.querySelectorAll('.item'));
+const modal = document.getElementById('modal');
+const modalImage = document.getElementById('modalImage');
+const modalCaption = document.getElementById('modalCaption');
+const closeBtn = document.getElementById('closeBtn');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const downloadBtn = document.getElementById('downloadBtn');
 
-
-
-// Prepare an array of larger image URLs (you can change to your own high-res files)
 const largeUrls = [
-'https://picsum.photos/id/1011/1400/900',
-'https://picsum.photos/id/1012/1400/900',
-'https://picsum.photos/id/1013/1400/900',
-'https://picsum.photos/id/1014/1400/900',
-'https://picsum.photos/id/1015/1400/900',
-'https://picsum.photos/id/1016/1400/900',
-'https://picsum.photos/id/1018/1400/900',
-'https://picsum.photos/id/1020/1400/900',
-'https://picsum.photos/id/1021/1400/900',
-'https://picsum.photos/id/1022/1400/900'
-]
+'im0.jpg/id/1011/900/600',
+'im1.jpg/id/1012/900/600',
+'im2.jpg/id/1013/900/600',
+'im3.jpg/id/1014/900/600'
+];
 
-
-let current = 0
+let current = 0;
 
 function openModal(index){
-current = index
-modalImage.src = largeUrls[index]
-modalImage.alt = items[index].querySelector('img').alt
-modalCaption.textContent = items[index].querySelector('.caption').textContent
-modal.classList.add('open')
-modal.setAttribute('aria-hidden', 'false')
-document.body.style.overflow = 'hidden'
+  current = index;
+  modalImage.src = largeUrls[index];
+  modalCaption.textContent = items[index].querySelector('.caption').textContent;
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
 
-
 function closeModal(){
-modal.classList.remove('open')
-modal.setAttribute('aria-hidden','true')
-document.body.style.overflow = ''
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
 }
 
 function showNext(dir=1){
-current = (current + dir + items.length) % items.length
-openModal(current)
+  current = (current + dir + items.length) % items.length;
+  openModal(current);
 }
 
-
-// Click thumbnails
+// Event listeners
 items.forEach((el,i)=>{
-el.addEventListener('click', e=>{
-e.preventDefault()
-openModal(i)
-})
-})
-
-
-// Controls
-closeBtn.addEventListener('click', closeModal)
-prevBtn.addEventListener('click', ()=>showNext(-1))
-nextBtn.addEventListener('click', ()=>showNext(1))
-
-// Click outside image closes
-modal.addEventListener('click', e=>{
-if(e.target === modal) closeModal()
-})
-
-
-// Keyboard
-document.addEventListener('keydown', e=>{
-if(modal.classList.contains('open')){
-if(e.key === 'Escape') closeModal()
-if(e.key === 'ArrowRight') showNext(1)
-if(e.key === 'ArrowLeft') showNext(-1)
-}
-})
-
-// Download current image
+  el.addEventListener('click', e=>{
+    e.preventDefault();
+    openModal(i);
+  });
+});
+closeBtn.addEventListener('click', closeModal);
+prevBtn.addEventListener('click', ()=>showNext(-1));
+nextBtn.addEventListener('click', ()=>showNext(1));
+modal.addEventListener('click', e=>{if(e.target===modal) closeModal();});
 downloadBtn.addEventListener('click', ()=>{
-const a = document.createElement('a')
-a.href = modalImage.src
-a.download = modalImage.alt.replace(/\s+/g,'-').toLowerCase()+'.jpg'
-document.body.appendChild(a)
-a.click()
-a.remove()
-})
+  const a = document.createElement('a');
+  a.href = modalImage.src;
+  a.download = modalImage.alt.replace(/\s+/g,'-').toLowerCase() + '.jpg';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+});
 
 
 })()
