@@ -6,14 +6,72 @@
     <title>Suziealb.com</title>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style type="text/css">
-.mama{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    max-width: 3500px;
-    justify-content: space-between;
-    padding: 20px 0;
-    
+
 }
+/* General Footer Styling */
+footer {
+    background-color: #333; /* Dark background for contrast */
+    color: #fff;
+    padding: 20px;
+    font-family: sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows sections to wrap to new lines on small screens */
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1 1 100%; /* Default to full width on mobile */
+    margin-bottom: 20px;
+}
+
+.footer-section h3, .footer-section h4 {
+    color: #00bcd4; /* Accent color for headings */
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    line-height: 1.5; /* Improve readability */
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-icons a img {
+    width: 30px; /* Ensures tap target is large enough */
+    margin-right: 10px;
+}
+
+/* Make phone numbers and emails clickable and readable */
+address a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+/* Media query for tablets and desktops */
+@media (min-width: 600px) {
+    .footer-section {
+        flex: 1 1 200px; /* Distribute sections into columns for larger screens */
+        margin-right: 20px;
+    }
+
+    .footer-container {
+        justify-content: space-around;
+    }
+
+
         body{
             background-color: gray;
             text-align: middle;
@@ -28,13 +86,7 @@
             font-size: 15px 0;
             margin: 5px;
         }
-        footer{
-            background-color: black;
-            color: white;
-            padding: 15px 0;
-            text-align: middle;
-            
-        }
+        
 nav{
     text-align: right;
     font-size: 15px;
@@ -43,12 +95,7 @@ nav{
             margin: 5px;
     
 }
-#boy{
-    text-align: center;
-    font-size: 15px;
-    border-top: 2px solid black;
-}
-         
+       
     </style>
     <link rel="icon" type="image/png" href="electric.PNGS">
     <nav>
@@ -67,35 +114,55 @@ nav{
 
     <p>Explore Suzan’s collection of memories—captured with love, arranged with care, and presented with creativity. Take a moment to browse through the gallery, feel the emotions behind every shot, and connect with the journey behind each image. My Album is more than just photos—it’s a living storybook of moments that matter.</p>
 <footer>
-    <div class="mama" >
-        <div>
-    <h5>ABOUT ME</h6>
-    <li><a href="photo.html">photos</a></li>
-    <li><a href="video.html">videos</a></li>
-    <li><a href="music.html">music</a></li>
+    <div class="footer-container">
+        <!-- Section 1: Branding & Info -->
+        <div class="footer-section brand-info">
+            <h3>[Your Company Name]</h3>
+            <p>Brief mission statement or description.</p>
+            <p>&copy; <span id="year"></span> [Your Company Name]. All rights reserved.</p>
         </div>
-        
-        <div>
-        <h6>FOLLOW ME</h6>
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>    
-        <a href="#"><i class="fab fa-x"></i></a>
+
+        <!-- Section 2: Navigation Links (Grouped for clarity) -->
+        <div class="footer-section footer-links">
+            <h4>Explore</h4>
+            <ul>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/careers">Careers</a></li>
+            </ul>
+        </div>
+
+        <!-- Section 3: Contact & Legal -->
+        <div class="footer-section contact-legal">
+            <h4>Support</h4>
+            <address>
+                <p>Email: <a href="mailto:contact@example.com">contact@example.com</a></p>
+                <p>Phone: <a href="tel:+1234567890">+123 456 7890</a></p>
+                <p>Address: 123 Street, City, Country</p>
+            </address>
+            <ul class="legal-links">
+                <li><a href="/privacy">Privacy Policy</a></li>
+                <li><a href="/terms">Terms of Service</a></li>
+            </ul>
+        </div>
+
+        <!-- Section 4: Social Media Icons -->
+        <div class="footer-section social-icons">
+            <h4>Connect</h4>
+            <!-- Use actual SVG icons or image links for social media -->
+            <a href="[link-to-facebook]" aria-label="Facebook"><img src="facebook-icon.svg" alt="Facebook"></a>
+            <a href="[link-to-twitter]" aria-label="Twitter"><img src="twitter-icon.svg" alt="Twitter"></a>
+            <a href="[link-to-instagram]" aria-label="Instagram"><img src="instagram-icon.svg" alt="Instagram"></a>
+        </div>
     </div>
-        
-        <div>
-        <h6>CONTACT ME</h6>
-        <ul>
-            <li><a href="#">&#128205; : Kampala,Ug</a></li>
-            <li><a href="#">&#128222; : 256(0)784915012</a></li>
-            <li><a href="#">&#128172; : 256(0)784915012</a></li>
-            <li><a href="#">&#9993; : kizito61@gmail.com</a></li>
-        </ul>
-        </div>
-</div>
-    <div id="boy">
-   &copy;2025 Suziealb.com All Rights Reserved.
-   </div>
 </footer>
+
+<!-- JavaScript to automatically update copyright year -->
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
 
