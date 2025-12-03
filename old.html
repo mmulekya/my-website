@@ -1,10 +1,10 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Image Grid → Click to Open</title>
-<style>
+<meta charset="UTF-8" />
+<title>oldies</title>
+
+<style type=text/css>
 :root {
   --gap: 12px;
   --thumb-h: 110px;
@@ -28,36 +28,30 @@ h1 {
   margin: 0 0 12px;
 }
 
-/* GRID — 3 columns default */
+/* GRID — 3 columns */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--gap);
 }
 
-/* Thumbnail items */
 .item {
   overflow: hidden;
   border-radius: 8px;
   background: #fafafa;
   cursor: pointer;
   display: block;
-  position: relative;
 }
 
 .item img {
   width: 100%;
   height: var(--thumb-h);
   object-fit: cover;
-  display: block;
   transition: transform .25s ease;
 }
 
-.item:hover img {
-  transform: scale(1.05);
-}
+.item:hover img { transform: scale(1.05); }
 
-/* Caption */
 .caption {
   padding: 8px 10px;
   font-size: 13px;
@@ -75,9 +69,7 @@ h1 {
   z-index: 1000;
   padding: 18px;
 }
-.modal.open {
-  display: flex;
-}
+.modal.open { display: flex; }
 
 .modal-content {
   max-width: 1100px;
@@ -98,36 +90,26 @@ h1 {
 .modal-row {
   width: 100%;
   display: flex;
-  align-items: center;
   justify-content: space-between;
   margin-top: 12px;
   color: #fff;
 }
 
-.modal-info {
-  font-size: 15px;
-}
+.modal-info { font-size: 15px; }
 
-/* Buttons */
-.btn {
+.btn, .nav-btn, .close {
   background: transparent;
   border: 0;
-  color: #fff;
-  font-size: 20px;
-  padding: 10px;
   cursor: pointer;
+  color: #fff;
 }
 
 .nav-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: transparent;
-  border: 0;
-  color: #fff;
   font-size: 32px;
   padding: 18px;
-  cursor: pointer;
 }
 
 .nav-left { left: 6px; }
@@ -137,273 +119,128 @@ h1 {
   position: absolute;
   right: 8px;
   top: 8px;
-  background: transparent;
-  border: 0;
-  color: #fff;
   font-size: 28px;
-  padding: 6px;
-  cursor: pointer;
 }
 
-/* RESPONSIVE */
+/* Responsive */
 @media (max-width: 900px) {
   .grid { grid-template-columns: repeat(2, 1fr); }
 }
-
 @media (max-width: 520px) {
   .grid { grid-template-columns: repeat(1, 1fr); }
   :root { --thumb-h: 150px; }
 }
-
 </style>
 </head>
 <body>
+
 <div class="container">
 <h1>Beautiful.</h1>
+
 <div class="grid" id="gallery">
-<!-- I added 10 images. Thumbnails are small; clicking opens the larger version. -->
-<!-- I   used picsum.photos for sample images; swap the URLs with your own images as needed. -->
 
+<!-- All 18 corrected items -->
 
-<a class="item" data-index="0" href="166.jpg">
-<img loading="lazy" alt="Photo 1" src="166.jpg/id/2011/200/100">
-<div class="caption">Photo 1</div>
-</a>
-
-
-<a class="item" data-index="1" href="167.jpg">
-<img loading="lazy" alt="Photo 2" src="167.jpg/id/2012/200/100">
-<div class="caption">Photo 2</div>
-</a>
-
-
-<a class="item" data-index="2" href="168.jpg">
-<img loading="lazy" alt="Photo 3" src="168.jpg/id/2013/200/100">
-<div class="caption">Photo 3</div>
-</a>
-
-
-<a class="item" data-index="3" href="169.jpg">
-<img loading="lazy" alt="Photo 4" src="169.jpg/id/2014/200/100">
-<div class="caption">Photo 4</div>
-</a>
-
-
-<a class="item" data-index="4" href="170.jpg">
-<img loading="lazy" alt="Photo 5" src="170.jpg/id/2015/200/100">
-<div class="caption">Photo 5</div>
-</a>
-
-
-<a class="item" data-index="5" href="171.jpg">
-<img loading="lazy" alt="Photo 6" src="171.jpg/id/1016/200/100">
-<div class="caption">Photo 6</div>
-</a>
-
-
-<a class="item" data-index="6" href="172.jpg">
-<img loading="lazy" alt="Photo 7" src="172.jpg/id/1018/200/100">
-<div class="caption">Photo 7</div>
-</a>
-
-
-<a class="item" data-index="7" href="173.jpg">
-<img loading="lazy" alt="Photo 8" src="173.jpg/id/1020/200/100">
-<div class="caption">Photo 8</div>
-</a>
-
-
-<a class="item" data-index="8" href="174.jpg">
-<img loading="lazy" alt="Photo 9" src="174.jpg/id/1021/200/100">
-<div class="caption">Photo 9</div>
-</a>
-
-
-<a class="item" data-index="9" href="175.jpg">
-<img loading="lazy" alt="Photo 10" src="175.jpg/id/1022/200/100">
-<div class="caption">Photo 10</div>
-</a>
-
-<a class="item" data-index="10" href="176.jpg">
-<img loading="lazy" alt="Photo 11" src="176.jpg/id/1023/200/100">
-<div class="caption">Photo 11</div>
-</a>
-
-
-<a class="item" data-index="11" href="177.jpg">
-<img loading="lazy" alt="Photo 12" src="177.jpg/id/1024/200/100">
-<div class="caption">Photo 12</div>
-</a>
-
-
-<a class="item" data-index="12" href="178.jpg">
-<img loading="lazy" alt="Photo 13" src="178.jpg/id/2025/200/100">
-<div class="caption">Photo 13</div>
-</a>
-
-
-<a class="item" data-index="13" href="179.jpg">
-<img loading="lazy" alt="Photo 14" src="179.jpg/id/2027/200/100">
-<div class="caption">Photo 14</div>
-</a>
-
-
-<a class="item" data-index="4" href="180.jpg">
-<img loading="lazy" alt="Photo 5" src="180.jpg/id/2028/200/100">
-<div class="caption">Photo 5</div>
-</a>
-
-
-<a class="item" data-index="15" href="181.jpg">
-<img loading="lazy" alt="Photo 16" src="181.jpg/id/1029/200/100">
-<div class="caption">Photo 16</div>
-</a>
-
-
-<a class="item" data-index="16" href="182.jpg">
-<img loading="lazy" alt="Photo 17" src="182.jpg/id/1031/200/100">
-<div class="caption">Photo 17</div>
-</a>
-
-
-<a class="item" data-index="17" href="183.jpg">
-<img loading="lazy" alt="Photo 18" src="183.jpg/id/1033/200/100">
-<div class="caption">Photo 18</div>
-</a>
-</div>
-
+<a class="item" data-index="0"><img src="166.jpg" alt="Photo 1"><div class="caption">Photo 1</div></a>
+<a class="item" data-index="1"><img src="167.jpg" alt="Photo 2"><div class="caption">Photo 2</div></a>
+<a class="item" data-index="2"><img src="168.jpg" alt="Photo 3"><div class="caption">Photo 3</div></a>
+<a class="item" data-index="3"><img src="169.jpg" alt="Photo 4"><div class="caption">Photo 4</div></a>
+<a class="item" data-index="4"><img src="170.jpg" alt="Photo 5"><div class="caption">Photo 5</div></a>
+<a class="item" data-index="5"><img src="171.jpg" alt="Photo 6"><div class="caption">Photo 6</div></a>
+<a class="item" data-index="6"><img src="172.jpg" alt="Photo 7"><div class="caption">Photo 7</div></a>
+<a class="item" data-index="7"><img src="173.jpg" alt="Photo 8"><div class="caption">Photo 8</div></a>
+<a class="item" data-index="8"><img src="174.jpg" alt="Photo 9"><div class="caption">Photo 9</div></a>
+<a class="item" data-index="9"><img src="175.jpg" alt="Photo 10"><div class="caption">Photo 10</div></a>
+<a class="item" data-index="10"><img src="176.jpg" alt="Photo 11"><div class="caption">Photo 11</div></a>
+<a class="item" data-index="11"><img src="177.jpg" alt="Photo 12"><div class="caption">Photo 12</div></a>
+<a class="item" data-index="12"><img src="178.jpg" alt="Photo 13"><div class="caption">Photo 13</div></a>
+<a class="item" data-index="13"><img src="179.jpg" alt="Photo 14"><div class="caption">Photo 14</div></a>
+<a class="item" data-index="14"><img src="180.jpg" alt="Photo 15"><div class="caption">Photo 15</div></a>
+<a class="item" data-index="15"><img src="181.jpg" alt="Photo 16"><div class="caption">Photo 16</div></a>
+<a class="item" data-index="16"><img src="182.jpg" alt="Photo 17"><div class="caption">Photo 17</div></a>
+<a class="item" data-index="17"><img src="183.jpg" alt="Photo 18"><div class="caption">Photo 18</div></a>
 
 </div>
+</div>
 
-<!-- Modal / Lightbox -->
-<div class="modal" id="modal" aria-hidden="true">
-<button class="nav-btn nav-left" id="prevBtn" aria-label="Previous">❮</button>
-<div class="modal-content" role="dialog" aria-modal="true">
-<button class="close" id="closeBtn" aria-label="Close">✕</button>
-<img id="modalImage" class="modal-img" alt="Expanded photo">
+<!-- Modal -->
+<div class="modal" id="modal">
+<button class="nav-btn nav-left" id="prevBtn">❮</button>
+
+<div class="modal-content">
+<button class="close" id="closeBtn">✕</button>
+<img id="modalImage" class="modal-img">
 <div class="modal-row">
-<div class="modal-info" id="modalCaption">Caption</div>
-<div>
-<button class="btn" id="downloadBtn" title="Download image">⬇ Download</button>
+<div class="modal-info" id="modalCaption"></div>
+<button class="btn" id="downloadBtn">⬇ Download</button>
 </div>
 </div>
+
+<button class="nav-btn nav-right" id="nextBtn">❯</button>
 </div>
-<button class="nav-btn nav-right" id="nextBtn" aria-label="Next">❯</button>
-</div>
+
 <script>
 (function(){
-const gallery = document.getElementById('gallery')
-const items = Array.from(gallery.querySelectorAll('.item'))
-const modal = document.getElementById('modal')
-const modalImage = document.getElementById('modalImage')
-const modalCaption = document.getElementById('modalCaption')
-const closeBtn = document.getElementById('closeBtn')
-const prevBtn = document.getElementById('prevBtn')
-const nextBtn = document.getElementById('nextBtn')
-const downloadBtn = document.getElementById('downloadBtn')
+const items = [...document.querySelectorAll(".item")];
+const modal = document.getElementById("modal");
+const modalImage = document.getElementById("modalImage");
+const modalCaption = document.getElementById("modalCaption");
+const closeBtn = document.getElementById("closeBtn");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+const downloadBtn = document.getElementById("downloadBtn");
 
-// Prepare an array of larger image URLs (you can change to your own high-res files)
 const largeUrls = [
-'166.jpg/id/1011/700/400',
-'167.jpg/id/1012/700/400',
-'168.jpg/id/1013/700/400',
-'169.jpg/id/1014/700/400',
-'170.jpg/id/1015/700/400',
-'171.jpg/id/1016/700/400',
-'172.jpg/id/1018/700/400',
-'173.jpg/id/1020/700/400',
-'174.jpg/id/1021/700/400',
-'175.jpg/id/1022/700/400',
-'177.jpg/id/1023/700/400',
-'178.jpg/id/1024/700/400',
-'179.jpg/id/1025/700/400',
-'180.jpg/id/1027/700/400',
-'181.jpg/id/1029/700/400',
-'182.jpg/id/1031/700/400',
-'183.jpg/id/1033/700/400',
-]
-let current = 0
+"166.jpg","167.jpg","168.jpg","169.jpg","170.jpg","171.jpg",
+"172.jpg","173.jpg","174.jpg","175.jpg","176.jpg","177.jpg",
+"178.jpg","179.jpg","180.jpg","181.jpg","182.jpg","183.jpg"
+];
 
+let current = 0;
 
-function openModal(index){
-current = index
-modalImage.src = largeUrls[index]
-modalImage.alt = items[index].querySelector('img').alt
-modalCaption.textContent = items[index].querySelector('.caption').textContent
-modal.classList.add('open')
-modal.setAttribute('aria-hidden', 'false')
-document.body.style.overflow = 'hidden'
+function openModal(i){
+  current = i;
+  modalImage.src = largeUrls[i];
+  modalCaption.textContent = items[i].querySelector(".caption").textContent;
+  modal.classList.add("open");
+  document.body.style.overflow="hidden";
 }
-
 
 function closeModal(){
-modal.classList.remove('open')
-modal.setAttribute('aria-hidden','true')
-document.body.style.overflow = ''
-}
-function showNext(dir=1){
-current = (current + dir + items.length) % items.length
-openModal(current)
+  modal.classList.remove("open");
+  document.body.style.overflow="";
 }
 
-
-// Click thumbnails
-items.forEach((el,i)=>{
-el.addEventListener('click', e=>{
-e.preventDefault()
-openModal(i)
-})
-})
-
-
-// Controls
-closeBtn.addEventListener('click', closeModal)
-prevBtn.addEventListener('click', ()=>showNext(-1))
-nextBtn.addEventListener('click', ()=>showNext(1))
-
-// Click thumbnails
-items.forEach((el,i)=>{
-el.addEventListener('click', e=>{
-e.preventDefault()
-openModal(i)
-})
-})
-
-
-// Controls
-closeBtn.addEventListener('click', closeModal)
-prevBtn.addEventListener('click', ()=>showNext(-1))
-nextBtn.addEventListener('click', ()=>showNext(1))
-
-
-// Click outside image closes
-modal.addEventListener('click', e=>{
-if(e.target === modal) closeModal()
-})
-
-
-// Keyboard
-document.addEventListener('keydown', e=>{
-if(modal.classList.contains('open')){
-if(e.key === 'Escape') closeModal()
-if(e.key === 'ArrowRight') showNext(1)
-if(e.key === 'ArrowLeft') showNext(-1)
+function showNext(d=1){
+  current = (current + d + items.length) % items.length;
+  openModal(current);
 }
-})
 
+items.forEach((el,i)=>el.addEventListener("click",()=>openModal(i)));
 
-// Download current image
-downloadBtn.addEventListener('click', ()=>{
-const a = document.createElement('a')
-a.href = modalImage.src
-a.download = modalImage.alt.replace(/\s+/g,'-').toLowerCase()+'.jpg'
-document.body.appendChild(a)
-a.click()
-a.remove()
-})
+closeBtn.onclick = closeModal;
+prevBtn.onclick = ()=>showNext(-1);
+nextBtn.onclick = ()=>showNext(1);
 
+modal.addEventListener("click",e=>{
+  if(e.target===modal) closeModal();
+});
 
-})()
+document.addEventListener("keydown",e=>{
+  if(!modal.classList.contains("open")) return;
+  if(e.key==="Escape") closeModal();
+  if(e.key==="ArrowRight") showNext(1);
+  if(e.key==="ArrowLeft") showNext(-1);
+});
+
+downloadBtn.addEventListener("click",()=>{
+  const a=document.createElement("a");
+  a.href = modalImage.src;
+  a.download = modalCaption.textContent.replace(/\s+/g,"-")+".jpg";
+  a.click();
+});
+})();
 </script>
+
 </body>
-</html>
+  </html>
